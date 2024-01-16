@@ -5,6 +5,9 @@
 This is the result of a speedrun at building a shopping cart application whilst learning about the .NET ecosystem and Angular. The app is split into an
 API which was built in .NET with the Cart on the frontend making calls to read and write information. 
 
+[Live Demo](https://rxthew.github.io/hoodiecart)
+[API Repository](https://www.github.com/rxthew/Cart-Solution-API)
+
 ### The homepage
 
 The application starts with a form where the user has to log in to access the store. The authentication system is only cosmetic, in reality the user sends
