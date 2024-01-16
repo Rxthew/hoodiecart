@@ -45,7 +45,7 @@ export class StoreComponent implements OnInit {
 
   addToCart(item: Item):void {
     sessionStorage.setItem("cartCache", JSON.stringify(item))
-    this.router.navigate(['/cart'])
+    this.router.navigate(['/hoodiecart/cart'])
     
   }
 

@@ -18,7 +18,7 @@ export class AppComponent {
     this.router.events.subscribe((event)=>{
       if(event instanceof NavigationEnd){
         const currentRoute = this.router.url;
-        currentRoute === '/' ? this.authService.checkAuth() && this.router.navigate(['/store']) : false
+        currentRoute === '/hoodiecart' ? this.authService.checkAuth() && this.router.navigate(['/hoodiecart/store']) : false
       }
     })
     

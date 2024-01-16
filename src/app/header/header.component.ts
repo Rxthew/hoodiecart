@@ -27,7 +27,7 @@ export class HeaderComponent {
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('password');
     sessionStorage.removeItem('userId');
-    this.router.navigate(['/'])
+    this.router.navigate(['/hoodiecart/'])
    }
 
    
