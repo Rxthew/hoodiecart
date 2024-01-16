@@ -1,0 +1,27 @@
+<main>
+    @if(loading){
+        <section>
+            <p>
+                Loading...Please wait.
+            </p>
+        </section>
+    }
+    @else if (!loading && items.length > 0) {
+        <ul>
+            @for (item of items; track item) {
+            <li>
+                <div>
+                    <p>{{item.name}}</p>
+                    <img src="{{srcsAccess(item.name)}}" alt="{{item.name}}" />
+                </div>
+                 <div>
+                    <p>{{item.price | currency: 'EUR'}}</p>
+                    <button (click)="addToCart(item)">Add to Cart</button>
+                </div>
+            </li>
+        }
+        </ul>
+
+    }    
+</main>
+

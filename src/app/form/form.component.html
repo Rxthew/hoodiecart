@@ -1,0 +1,26 @@
+<main>
+    <form #userForm="ngForm" (submit)="onSubmit()">
+        @if(unauth){
+            <div>
+                <p class="alert">Username and password combination is incorrect. Please try again.</p>
+            </div>
+        }
+        <div>
+            @if(username.errors?.['required']){
+                <p class="alert">Username is required</p>
+            }
+            <label for="username"></label>
+            <input id="username" name="username" [(ngModel)]="model.username" required="true" type="text" #username="ngModel" placeholder="username"/>
+            
+        </div>
+        <div>
+            @if(password.errors?.['required']){
+                <p class="alert">Password is required</p>
+            }
+            <label for="password"></label>
+            <input id="password" name="password" placeholder="password" [(ngModel)]="model.password" required="true" type="password" #password="ngModel">
+        </div>
+        <button>Submit</button>
+    </form>
+</main>
+

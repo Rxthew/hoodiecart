@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    background-color: #e3ffee;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: "Noto Serif", "Helvetica Neue", Helvetica, sans-serif;
+    
+    
+}
+
+li {
+    padding-left: 1rem;
+    border-left: 1px solid;
+    list-style-type: none;
+    list-style: none;
+    color: darkgreen;
+}
+
+li > button {
+    float: right;
+}
+
+h3, h4, p, button {
+    color: black;
+}
+
+h3, h4, p {
+    padding: 1rem;
+}
+
+img {
+    object-fit: cover;
+    width: 150px
+}
+
+button {
+    appearance: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    border: 2px solid green;
+    border-radius: 5px;
+}
+
+.amount {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.amount span, .totalControl span {
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: white;
+    color: red;
+    font-weight: bolder;
+}
+
+.amountControl {
+    background-color: white;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+
+}
+
+.amountControl button:first-child {
+    margin-right: auto;
+}
+
+.amountControl button:last-child {
+    margin-left: auto;
+}
+
+.totalControl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.totalControl p{
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.totalControl button {
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    padding: 1rem 2rem;
+}
+
+.totalControl > div {
+    margin:  2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+

@@ -1,0 +1,61 @@
+<main>
+    <ul>
+        <h2>These are the items in your cart:</h2>
+        @if(loading){
+        <section>
+            <p>
+                Loading...Please wait.
+            </p>
+        </section>
+    }
+    @else if (!loading && cart.items.length > 0){
+        @for (cartItem of cart.items; track cartItem){
+            <div>
+                <li>
+                    <h3>{{cartItem.item.name}}</h3>
+                    <img src="{{srcsAccess(cartItem.item.name)}}" alt="{{cartItem.item.name}}"/>
+                    <button (click)="removeFromCart(cartItem)">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="red" height="16" width="14" viewBox="0 0 448 512" aria-labelledby="removelabel removedesc" role="img">
+                            <title id="removelabel">remove</title>
+                            <desc id="removedesc">Remove all orders of this item from Cart</desc>
+                            <path d="M170.5 51.6L151.5 80h145l-19-28.4c-1.5-2.2-4-3.6-6.7-3.6H177.1c-2.7 0-5.2 1.3-6.7 3.6zm147-26.6L354.2 80H368h48 8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-8V432c0 44.2-35.8 80-80 80H112c-44.2 0-80-35.8-80-80V128H24c-13.3 0-24-10.7-24-24S10.7 80 24 80h8H80 93.8l36.7-55.1C140.9 9.4 158.4 0 177.1 0h93.7c18.7 0 36.2 9.4 46.6 24.9zM80 128V432c0 17.7 14.3 32 32 32H336c17.7 0 32-14.3 32-32V128H80zm80 64V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16zm80 0V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V192c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>
+                    </button>   
+                    <div>
+                        <h4>Check how many you have:</h4>
+                        <div class="amount">
+                            
+                            <p>Item total price:</p>
+                            <span>{{cartItem.getItemsCost() | currency: 'EUR'}}</span>
+                            <p>Item total amount:</p>
+                            <span> {{cartItem.amount}}</span>                            
+                        </div>
+                        <div class="amountControl">
+                            <button (click)="decrementAmount(cartItem)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" aria-labelledby="sublabel subdesc" role="img">
+                                    <title id="sublabel">decrement</title>
+                                    <desc id="subdesc">Subtract from current item amount</desc>
+                                    <path d="M8.333 21.375v-2.75h23.334v2.75Z"/></svg>
+                            </button>
+                            <button (click)="incrementAmount(cartItem)">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="40" width="40" aria-labelledby='inclabel incdesc' role='img'>
+                                    <title id='inclabel'>increment</title><desc id='incdesc'>Add to current item amount</desc>
+                                    <path d="M18.625 31.667V21.375H8.333v-2.75h10.292V8.333h2.75v10.292h10.292v2.75H21.375v10.292Z"/></svg>    
+                            </button>
+                        </div>
+                    </div>                 
+                </li>                
+            </div>
+        }
+        <div class="totalControl">
+            <div>
+                <p>Whole Cart Subtotal:</p> 
+                <span>{{cart.subTotal() | currency: 'EUR'}}</span>  
+            </div>
+              <button (click)="clearCart()">Clear Cart</button>
+        </div>
+    }
+    @else {
+        <li>There is nothing in your cart right now. </li>
+    }
+    </ul>
+</main>
